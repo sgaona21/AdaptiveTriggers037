@@ -8,43 +8,45 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Name="ColorGrid">
+    <Grid x:Name="mainGrid">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="VisualStatePhone">
+            <VisualStateGroup>
+                <VisualState>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ColorGrid.Background" Value="White" />
-                        <Setter Target="phoneTextBlock.FontSize" Value="24" />
-                        <Setter Target="phoneTextBlock.Text" Value="PHONE STATE ENABALED" />
+                        <Setter Target="mainGrid.Background" Value="Yellow" />
+                        <Setter Target="mainTextBlock.Text" Value="PHONE MODE ENABLED" />
+                        <Setter Target="mainTextBlock.FontSize" Value="24" />
                     </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="VisualStateTablet">
+
+                <VisualState>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
+                        <AdaptiveTrigger MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ColorGrid.Background" Value="Yellow" />
-                        <Setter Target="phoneTextBlock.FontSize" Value="40" />
-                        <Setter Target="phoneTextBlock.Text" Value="TABLET STATE ENABALED" />
+                        <Setter Target="mainGrid.Background" Value="LightBlue" />
+                        <Setter Target="mainTextBlock.Text" Value="TABLET MODE ENABLED" />
+                        <Setter Target="mainTextBlock.FontSize" Value="40" />
                     </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="VisualStateDesktop">
+
+                <VisualState>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="1200" />
+                        <AdaptiveTrigger MinWindowWidth="1200"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ColorGrid.Background" Value="Green" />
-                        <Setter Target="phoneTextBlock.FontSize" Value="72" />
-                        <Setter Target="phoneTextBlock.Text" Value="DESKTOP STATE ENABALED" />
+                        <Setter Target="mainGrid.Background" Value="Green" />
+                        <Setter Target="mainTextBlock.Text" Value="DESKTOP MODE ENABLED" />
+                        <Setter Target="mainTextBlock.FontSize" Value="72" />
                     </VisualState.Setters>
                 </VisualState>
+
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <TextBlock x:Name="phoneTextBlock" Foreground="black" Text="PHONE MODE ENABLED" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        
+        <TextBlock x:Name="mainTextBlock" Text="initial text" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" />
     </Grid>
 </Page>
